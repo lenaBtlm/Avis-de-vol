@@ -1,10 +1,10 @@
 package com.airfrance.avisdevol.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,5 +15,9 @@ public class Review {
     private String flightNumber;
     private String comment;
     private Integer rating;
+    
+    @JsonManagedReference
+    @OneToMany(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
     private String dateOfFlight;
 }

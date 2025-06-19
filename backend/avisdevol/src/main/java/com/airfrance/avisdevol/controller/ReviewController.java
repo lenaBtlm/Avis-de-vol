@@ -31,4 +31,9 @@ public class ReviewController {
     public Review createReview(@RequestBody Review review) {
         return reviewRepository.save(review);
     }
+
+    @GetMapping("/flight/{flightNumber}")
+    public List<Review> getReviewsByFlightNumber(@PathVariable String flightNumber) {
+        return reviewRepository.findByFlightNumber(flightNumber);
+    }
 }
