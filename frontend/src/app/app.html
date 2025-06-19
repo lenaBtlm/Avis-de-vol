@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <form (ngSubmit)="send()" #myForm="ngForm">
+    <div class="mb-3">
+      <label for="numVol" class="form-label">Numéro de vol</label>
+      <input type="text" class="form-control" id="numVol" [(ngModel)]="formData.numVol" name="numVol">
+    </div>
+
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="text" class="form-control" id="date" [(ngModel)]="formData.date" name="date">
+    </div>
+
+    <div class="mb-5">
+      <label for="compagnie" class="form-label">Compagnie </label>
+      <input type="text" class="form-control" id="compagnie" [(ngModel)]="formData.compagnie" name="compagnie">
+    </div>
+
+    <div class="mb-5">
+      <label class="form-label">Score</label>
+      <div class="stars">
+        <i *ngFor="let star of [1,2,3,4,5]" 
+           (click)="setRating(star)"
+           class="bi" 
+           [class.bi-star]="star > rating"
+           [class.bi-star-fill]="star <= rating"
+           style="cursor: pointer; color: #ffd700;"></i>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="avis" class="form-label">Avis</label>
+      <textarea class="form-control" id="avis" rows="3" [(ngModel)]="formData.avis" name="avis"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </form>
+</div>
