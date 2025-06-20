@@ -36,4 +36,14 @@ public class ReviewController {
     public List<Review> getReviewsByFlightNumber(@PathVariable String flightNumber) {
         return reviewRepository.findByFlightNumber(flightNumber);
     }
+
+    @GetMapping("/score/{rating}")
+    public List<Review> getReviewsByRating(@PathVariable Integer rating) {
+        return reviewRepository.getReviewsByRating(rating);
+    }
+
+    @GetMapping("/date/{dateOfFlight}")
+    public List<Review> getReviewsByDateOfFlight(@PathVariable String dateOfFlight) {
+        return reviewRepository.getReviewsByDateOfFlight(dateOfFlight);
+    }
 }
