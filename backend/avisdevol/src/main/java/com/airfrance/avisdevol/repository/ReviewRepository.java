@@ -11,4 +11,5 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     List<Review> findByFlightNumber(String flightNumber);
     List<Review> getReviewsByRating(Integer rating);
     List<Review> getReviewsByDateOfFlight(String dateOfFlight);
+    List<Review> findByCommentsIsEmpty();
 }

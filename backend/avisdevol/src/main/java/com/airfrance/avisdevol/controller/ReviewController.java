@@ -49,6 +49,11 @@ public class ReviewController {
         return reviewRepository.getReviewsByDateOfFlight(dateOfFlight);
     }
 
+    @GetMapping("/no-comment")
+    public List<Review> getReviewsWithoutComment() {
+        return reviewRepository.findByCommentsIsEmpty();
+    }
+
     @PostMapping("/{id}/status")
     public ResponseEntity<Review> addStatusReview(@PathVariable Long id, @RequestBody StatusDTO status) {
         Optional<Review> reviewOpt = reviewRepository.findById(id);
