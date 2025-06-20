@@ -1,8 +1,8 @@
 <div class="container mt-5">
   <form (ngSubmit)="send()" #myForm="ngForm">
     <div class="mb-3">
-      <label for="numVol" class="form-label">Numéro de vol</label>
-      <input type="text" class="form-control" id="numVol" [(ngModel)]="formData.numVol" name="numVol">
+      <label for="flightNumber" class="form-label">Flight number</label>
+      <input type="text" class="form-control" id="flightNumber" [(ngModel)]="formData.flightNumber" name="flightNumber">
     </div>
 
     <div class="mb-3">
@@ -11,8 +11,8 @@
     </div>
 
     <div class="mb-5">
-      <label for="compagnie" class="form-label">Compagnie </label>
-      <input type="text" class="form-control" id="compagnie" [(ngModel)]="formData.compagnie" name="compagnie">
+      <label for="company" class="form-label">Airline company</label>
+      <input type="text" class="form-control" id="company" [(ngModel)]="formData.company" name="company">
     </div>
 
     <div class="mb-5">
@@ -28,10 +28,10 @@
     </div>
 
     <div class="mb-3">
-      <label for="avis" class="form-label">Avis</label>
-      <textarea class="form-control" id="avis" rows="3" [(ngModel)]="formData.avis" name="avis"></textarea>
+      <label for="comment" class="form-label">Comment</label>
+      <textarea class="form-control" id="comment" rows="3" [(ngModel)]="formData.comment" name="comment"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Soumettre</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
