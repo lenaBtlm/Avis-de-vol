@@ -15,6 +15,9 @@ public class Review {
     private String flightNumber;
     private String comment;
     private Integer rating;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
     
     @JsonManagedReference
     @OneToMany(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
