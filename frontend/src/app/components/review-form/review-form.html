@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="form-container">
+    <h2 class="text-center mb-4">Flight Review</h2>
+    <form (ngSubmit)="send()" #myForm="ngForm">
+      <div class="mb-3">
+        <label for="flightNumber" class="form-label">Flight number</label>
+        <input type="text" class="form-control" id="flightNumber" [(ngModel)]="formData.flightNumber" name="flightNumber">
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="text" class="form-control" id="date" [(ngModel)]="formData.date" name="date">
+      </div>
+
+      <div class="mb-5">
+        <label for="company" class="form-label">Airline company</label>
+        <input type="text" class="form-control" id="company" [(ngModel)]="formData.company" name="company">
+      </div>
+
+      <div class="mb-5">
+        <label class="form-label">Score</label>
+        <div class="stars">
+          <i *ngFor="let star of [1,2,3,4,5]" 
+             (click)="setRating(star)"
+             class="bi" 
+             [class.bi-star]="star > rating"
+             [class.bi-star-fill]="star <= rating"
+             style="cursor: pointer; color: #ffd700;"></i>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="comment" class="form-label">Comment</label>
+        <textarea class="form-control" id="comment" rows="3" [(ngModel)]="formData.comment" name="comment"></textarea>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary me-3">Submit</button>
+        <button type="button" class="btn btn-outline-primary" (click)="viewReviews()">View All Reviews</button>
+      </div>
+    </form>
+  </div>
+</div>

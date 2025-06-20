@@ -48,26 +48,15 @@ h2 {
   transform: translateY(-2px);
 }
 
-.button-group {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.btn-outline-primary {
-  color: #0d47a1;
-  border-color: #0d47a1;
-}
-
-.btn-outline-primary:hover {
-  background-color: #0d47a1;
-  color: white;
-  transform: translateY(-2px);
-}
-
 .container {
   background-color: #f8f9fa;
   min-height: 100vh;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
 }
