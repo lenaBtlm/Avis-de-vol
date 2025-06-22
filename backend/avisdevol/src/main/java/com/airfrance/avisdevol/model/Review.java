@@ -13,6 +13,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String flightNumber;
+    private String company;
     private String comment;
     private Integer rating;
 

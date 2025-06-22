@@ -49,6 +49,11 @@ public class ReviewController {
         return reviewRepository.getReviewsByDateOfFlight(dateOfFlight);
     }
 
+    @GetMapping("/company/{company}")
+    public List<Review> getReviewsByCompany(@PathVariable String company) {
+        return reviewRepository.getReviewsByCompany(company);
+    }
+
     @GetMapping("/no-comment")
     public List<Review> getReviewsWithoutComment() {
         return reviewRepository.findByCommentsIsEmpty();
