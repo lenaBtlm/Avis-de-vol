@@ -43,7 +43,7 @@ export class ReviewForm {
       .subscribe({
         next: (response) => {
           console.log('Review submitted successfully:', response);
-          this.formData = {
+          this.formData = { 
             flightNumber: '',
             date: '',
             company: '',
