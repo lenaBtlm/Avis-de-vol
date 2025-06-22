@@ -151,7 +151,7 @@ cd backend/avisdevol
 
   Exemple avec comme note 4:
   ```http
-    http://localhost:8080/api/reviews/score/4
+  GET http://localhost:8080/api/reviews/score/4
   ```
 
 **Par date:**
@@ -161,7 +161,7 @@ cd backend/avisdevol
 
   Exemple avec comme date 2025-06-22:
   ```http
-    http://localhost:8080/api/reviews/date/2025-06-22
+  GET http://localhost:8080/api/reviews/date/2025-06-22
   ```
 
 **Par compagnie:**
@@ -171,7 +171,7 @@ cd backend/avisdevol
 
   Exemple avec comme compagnie Air France:
   ```http
-    http://localhost:8080/api/reviews/company/air%20france
+  GET http://localhost:8080/api/reviews/company/air%20france
   ```
 
 **Par numéro de vol:**
@@ -181,7 +181,7 @@ cd backend/avisdevol
 
   Exemple avec comme numéro de vol A380:
   ```http
-    http://localhost:8080/api/reviews/flight/A380
+  GET http://localhost:8080/api/reviews/flight/A380
   ```
 
 - **Visualisation d'un avis spécifique**
@@ -191,7 +191,7 @@ cd backend/avisdevol
 
   Exemple avec comme id 5:
   ```http
-    http://localhost:8080/api/reviews/5
+  GET http://localhost:8080/api/reviews/5
   ```
 
 #### 2. Gestion des Réponses
@@ -206,9 +206,9 @@ POST http://localhost:8080/api/reviews/{id}/comments
     "public": true
 }
 ```
-- Le champ `public` permet d'indiquer si le commentaire doit être visible publiquement sur le frontend
-- Si `public` est à `true`, le commentaire sera affiché aux utilisateurs ; si `false`, il restera privé et ne sera pas affiché
-- Cette option facilitera la gestion de la visibilité des réponses lors de l'ajout de la fonctionnalité côté frontend
+Le champ `public` permet d'indiquer si le commentaire doit être visible publiquement sur le frontend.
+Si `public` est à `true`, le commentaire sera affiché aux utilisateurs ; si `false`, il restera privé et ne sera pas affiché.
+Cette option facilitera la gestion de la visibilité des réponses lors de l'ajout de la fonctionnalité côté frontend.
 
 - **Modification du statut**
   ```http
