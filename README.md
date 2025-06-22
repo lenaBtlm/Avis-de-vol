@@ -221,10 +221,46 @@ Cette option facilitera la gestion de la visibilité des réponses lors de l'ajo
   ```
 
 ## 4. Base de données
+
 ### Configuration
+- Base de données : MySQL 8.0
+- Base de données : avisdevol
 
+### Structure de la base de données
 
-### Modèle de données
+#### Tables principales
 
+1. **review** : Stockage des avis
+```sql
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| id             | bigint       | NO   | PRI | NULL    | auto_increment |
+| comment        | varchar(255) | YES  |     | NULL    |                |
+| date_of_flight | varchar(255) | YES  |     | NULL    |                |
+| flight_number  | varchar(255) | YES  |     | NULL    |                |
+| rating         | int          | YES  |     | NULL    |                |
+| status         | varchar(20)  | YES  |     | NULL    |                |
+| company        | varchar(255) | YES  |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+```
+
+2. **comment** : Stockage des réponses aux avis
+```sql
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | bigint       | NO   | PRI | NULL    | auto_increment |
+| is_public | bit(1)       | NO   |     | NULL    |                |
+| text      | varchar(255) | YES  |     | NULL    |                |
+| review_id | bigint       | NO   | MUL | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+```
+
+### Relations
+- Une relation One-to-Many entre `review` et `comment`
+- Un avis peut avoir plusieurs commentaires
+- Un commentaire appartient à un seul avis
+- La suppression d'un avis entraîne la suppression de ses commentaires
 
 ## 5. Diagrammes
