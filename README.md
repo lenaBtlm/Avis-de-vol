@@ -1,7 +1,5 @@
 # Avis-de-vol
 
-# Avis-de-vol
-
 ## 1. Introduction
 "Avis de Vol" est une application web permettant aux voyageurs de partager leurs expériences de vol et aux compagnies aériennes de gérer ces retours clients de manière efficace.
 
@@ -52,6 +50,33 @@ ng serve
 ```
 Frontend (Angular) → Requêtes HTTP → Backend (Spring Boot) → Base de données
 ```
+
+### Structure et Relations
+
+#### Points d'Entrée
+- `index.html` : Point d'entrée HTML de l'application
+- `main.ts` : Initialisation de l'application Angular
+- `styles.css` : Styles globaux de l'application
+
+#### Configuration Application
+- `app.config.ts` : Configuration globale de l'application Angular
+- `app.routes.ts` : Définition des routes de navigation
+- `app.html` : Template principal de l'application
+- `app.css` : Styles du composant principal
+- `app.ts` : Composant racine de l'application
+
+#### Composants Principaux
+- `components/review-form/` : Gestion des formulaires d'avis
+  - Communique avec `ReviewController` pour la soumission
+  - Validation des données avant envoi
+- `components/review-list/` : Affichage des avis
+  - Récupération des données depuis le backend
+  - Affichage et filtrage des avis
+
+#### Fichiers de Configuration
+- `angular.json` : Configuration du projet Angular
+- `proxy.conf.json` : Configuration du proxy pour le développement
+- `tsconfig.json` : Configuration TypeScript
 
 ## 3. Backend
 ### Technologies
