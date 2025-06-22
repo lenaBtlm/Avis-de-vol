@@ -263,4 +263,8 @@ Cette option facilitera la gestion de la visibilité des réponses lors de l'ajo
 - Un commentaire appartient à un seul avis
 - La suppression d'un avis entraîne la suppression de ses commentaires
 
-## 5. Diagrammes
+## 5. Diagramme de l'application
+
+![Diagramme Mermaid](./diagram/avisdevol_%20Mermaid.png)
+
+J'ai utilisé [Mermaid](https://mermaid-js.github.io/) pour illustrer les relations entre les entités de l'application.
