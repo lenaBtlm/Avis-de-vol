@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm  } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrl: './review-form.css'
 })
 export class ReviewForm {
+  @ViewChild('myForm') myForm!: NgForm;
+  
   formData = {
     flightNumber: '',
     date: '',
@@ -50,6 +52,7 @@ export class ReviewForm {
             comment: ''
           };
           this.rating = 0;
+          this.myForm.resetForm();
         },
         error: (error) => {
           console.error('Error submitting review:', error);
