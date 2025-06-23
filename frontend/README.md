@@ -1,59 +1,54 @@
 # Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+## Technologies et Dépendances
+- Angular CLI version 20.0.3
+- TypeScript 5.2.0
+- Node.js 18+
 
-## Development server
+## Bibliothèques externes
+- Bootstrap 5.3.0 : Framework CSS pour le design responsive
+- @ng-bootstrap/ng-bootstrap : Composants Bootstrap pour Angular
 
-To start a local development server, run:
-
+## Installation et démarrage
 ```bash
+# Installation des dépendances
+cd frontend
+npm install
+
+# Lancement du serveur de développement
 ng serve
+
+# L'application est accessible sur http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+## Flux de Données
+```
+Frontend (Angular) → Requêtes HTTP → Backend (Spring Boot) → Base de données
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Structure et Relations
 
-```bash
-ng generate --help
-```
+### Points d'Entrée
+- `index.html` : Point d'entrée HTML de l'application
+- `main.ts` : Initialisation de l'application Angular
+- `styles.css` : Styles globaux de l'application
 
-## Building
+### Configuration Application
+- `app.config.ts` : Configuration globale de l'application Angular
+- `app.routes.ts` : Définition des routes de navigation
+- `app.html` : Template principal de l'application
+- `app.css` : Styles du composant principal
+- `app.ts` : Composant racine de l'application
 
-To build the project run:
+### Composants Principaux
+- `components/review-form/` : Gestion des formulaires d'avis
+  - Communique avec `ReviewController` pour la soumission
+  - Validation des données avant envoi
+- `components/review-list/` : Affichage des avis
+  - Récupération des données depuis le backend
+  - Affichage et filtrage des avis
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Fichiers de Configuration
+- `angular.json` : Configuration du projet Angular
+- `proxy.conf.json` : Configuration du proxy pour le développement
+- `tsconfig.json` : Configuration TypeScript
