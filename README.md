@@ -136,13 +136,13 @@ cd backend/avisdevol
 ### Tests du Backend via Postman
 
 #### 1. Gestion des Avis
-**Liste des avis**
+- **Liste des avis**
   ```http
   GET http://localhost:8080/api/reviews
   ```
-- Récupération de tous les avis
+Récupération de tous les avis
 
-**Filtrage et Tri**
+- **Filtrage et Tri**
 
 **Par note:**
   ```http
